@@ -1,0 +1,10 @@
+- name: Install python
+  homebrew: name={{ item }} state=installed
+  become: true
+  become_user: "{{ python_user }}"
+  with_items:
+    - python
+    - python3
+  when: ansible_pkg_mgr == 'homebrew'
+
+# Install "python-setuptools" with yum & aptitude
