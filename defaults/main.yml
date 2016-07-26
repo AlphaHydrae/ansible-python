@@ -1,2 +1,2 @@
 ---
-python_user: "{{ user }}"
+python_homebrew_user: "{{ homebrew_user | default(user) | default(omit) }}"
