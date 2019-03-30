@@ -2,12 +2,13 @@
 
 # Homebrew
 - name: Install python (Homebrew)
-  homebrew: name={{ item }} state=installed
+  homebrew:
+    name:
+      - python
+      - python3
+    state: present
   become: true
   become_user: "{{ python_homebrew_user }}"
-  with_items:
-    - python
-    - python3
   when: ansible_pkg_mgr == 'homebrew'
 
 # Other package managers
