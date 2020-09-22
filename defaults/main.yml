@@ -1,2 +1,2 @@
 ---
-python_homebrew_user: "{{ homebrew_user | default(user) | default(omit) }}"
+python_version: 3.8.5

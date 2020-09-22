@@ -1,6 +1,6 @@
 galaxy_info:
   author: Simon Oulevay (Alpha Hydrae)
-  description: Installs python 2 & 3.
+  description: Installs Python with asdf.
   license: MIT
   min_ansible_version: 2.0
 
@@ -11,5 +11,9 @@ galaxy_info:
 
   galaxy_tags:
     - python
+    - asdf
 
-dependencies: []
+dependencies:
+  - role: AlphaHydrae.asdf-plugin
+    asdf_plugin_name: python
+    asdf_plugin_global_version: "{{ python_version }}"
